@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+.userinfo .hd{
+	/*margin:20px 0;*/
+}
+.userinfo .weui_cells{
+	margin-top:0;
+}
+.userinfo .weui_media_box.weui_media_appmsg .weui_media_hd{
+	width:80px;
+	height:80px;
+	margin-right:1.2em;
+}
+.userinfo .weui_media_box{
+	padding:10px 20px;
+}
+.userinfo .weui_cell{
+	padding: 10px 20px;
+}
+
+.menulist .iconfont{
+	font-size: 24px;
+    vertical-align: super;
+    margin-right: .5em;
+}
+.menulist .iconfont.icon-bangdingyouxiang{
+	color:#F0E68C;
+}
+.menulist .iconfont.icon-jihuozhanghu{
+	color:#87CEFA;
+}
+.info{
+	padding:20px 0;
+	background-color:#fbf9fe;
+}
+	

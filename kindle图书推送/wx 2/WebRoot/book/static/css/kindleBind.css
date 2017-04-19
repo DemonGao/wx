@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+	overflow:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+body{
+	height:100%;
+	background-color:#f9f9f9;
+}
+.demos-header{
+	background-color:#fff;
+	box-shadow: 0px 0px 4px #aaa;
+}
+.demos-header .tabul{
+	
+	margin:0 auto;
+	padding:10px 0;
+	
+}
+.demos-header .tabul li{
+	list-style:none;
+	float:left;
+	box-sizing:border-box;
+	width:33.333%;
+	/*background-color:#87CEEB;*/
+	text-align:center;
+}
+.demos-header .tabul li span{
+	position:relative;
+	display:block;
+	width:30px;
+	margin:0 auto;
+	text-align:center;
+	font-size:20px;
+	border-radius:35px;
+	border:1px solid #ccc;
+	color:#ccc;
+	background-color:#fff;
+	z-index:2;
+	
+	transition:all .25s;
+}
+.demos-header .tabul li span.active{
+	color:#fff;
+	background-color:#87CEEB;
+	transition:all .25s;
+}
+.demos-header .tabul li .tabline{
+	display:block;
+	position:relative;
+	top:-18px;
+	left:50%;
+	width:100%;
+	height:0px;
+	background-color:#ccc;
+	z-index:1;
+}
+.container{
+	position:relative;
+	margin-top:2px;
+	
+}
+/*容器*/
+.container .tabbox{
+	width:100%;
+	display:none;
+	position:absolute;
+	/*left:-120%;*/
+	opacity:0;
+	overflow:hidden;
+	transition:all .5s;
+}
+.container .tabbox.active{
+	display:block;
+	opacity:1;
+	/*left:0;*/
+	transition:all .5s;
+}
+.tabbox>h4,#tabbox2msg>h4{
+	margin:45px auto 10px;
+	text-align:center;
+}
+.tabbox>p{
+	text-align:center;
+}
+
+.tabbox2 #tabbox2msg span{
+	display:block;
+	padding-top:50px;
+	
+	text-align:center;
+	
+	margin:0 auto;
+	font-size:12px;
+}
+
+.weui_cells_form{
+	
+	margin:20px 0 40px;
+}
+.email_label{
+	margin-left:10px;
+	width:inherit;
+}
+.email_input{
+	text-indent:1em;
+}
+.email .email_select{
+	display:inlne-block;
+	float:right;
+	width:inherit;
+}
+.weui_cell_select .weui_cell_bd:after {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    
+    margin-top: -6px;
+}
+
+.btndiv{
+	padding:0 15px;
+	margin:0 auto;
+}
+

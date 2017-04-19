@@ -1,0 +1,94 @@
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+	overflow:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+body,html {
+	height:100%;
+	-webkit-tap-highlight-color:transparent
+}
+body {
+	overflow-x:hidden;
+	background-color:#fbf9fe
+}
+.container {
+	height:100%;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch
+}
+.container>div {
+	background-color:#fbf9fe
+}
+.hd {
+	/*padding:2em 0;*/
+}
+/*页头标题*/
+/*.page_title {
+	text-align:center;
+	font-size:34px;
+	color:#3cc51f;
+	font-weight:400;
+	margin:0 15%
+}*/
+
+/*页头导航栏*/
+.home_nav{
+	
+}
+.home_nav ul{
+	
+}
+.home_nav ul li{
+	float: left;
+	width: 25%;
+	/*height: 50px;*/
+	text-align: center;
+	/*line-height: 50px;*/
+	list-style: none;
+	padding: 5px 0;
+	box-sizing: border-box;
+	
+	font-size:12px;
+}
+/*导航栏超链接设置*/
+.home_nav ul li a{
+	display:inline-block;
+	width:100%;
+	height:100%;
+}
+/*导航栏图标样式设置*/
+.home_nav ul li i{
+	font-size:1.8em;
+	display:block;
+	color:#87CEEB;
+}
+/*导航栏文字设置*/
+.home_nav ul li span{
+	color:#87CEEB;
+}
+/*搜索框样式*/
+.search_show {
+	display:none;
+	margin-top:0;
+	font-size:14px
+}
+.search_show .weui_cell_bd {
+	padding:2px 0 2px 20px;
+	color:#666
+}
+.weui_search_cancel{
+	/*修改weui默认搜索栏的取消颜色样式*/
+	color:#87CEEB;
+}
+
+/*图书展示*/
+.panel_htitle{
+	border-left:4px solid #87CEEB;
+}
