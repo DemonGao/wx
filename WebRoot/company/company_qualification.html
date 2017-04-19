@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>边学边实践-公司信息</title>
+    <link type="text/css" rel="stylesheet" href="commonstatic/font/iconfont.css" />
+    <link type="text/css" rel="stylesheet" href="commonstatic/css/cssreset.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/pcstyle.css" />
+    <link type="text/css" rel="stylesheet" href="commonstatic/css/Gscstyle.css" />
+</head>
+<script>
+	if(localStorage.getItem("bxbsj_userinfo")==null){
+		window.location.href="/wxkf/company/login.jsp";
+	}
+</script>
+<body class="b-index">
+<div id="bxbsj">
+    <header>
+        <div class="w">
+            <div class="h_logo float_l margin-t-15"><a href="javascript:;"></a></div>
+            <div class="h_version color-4b float_l">企业版</div>
+            <ul class="nav">
+                <li>管理中心</li>
+                <li class="line"></li>
+                <li>
+                    <a href="http://vip.doumi.com/zhaopin/">招聘合作</a>
+                </li>
+                <li class="line"></li>
+                <li><a href="http://www.doumi.com/bj/" target="_blank">职位</a></li>
+                <!--li class="line"></li>
+                <li><a href="/">帮助中心</a></li-->
+            </ul>
+            <div class="float_r clearfix">
+                <span class="fl color-4b margin-r-15" v-cloak>{{ui.company_username}}</span>
+                <i class="fl l"></i>
+                <span class="fl color-4b margin-l-15"><a v-on:click="logout()" href="javascript:;">退出</a></span>
+            </div>
+        </div>
+    </header>
+<aside class="ad w margin-t-10"><a href="javascript:;"><img src="static/img/vip_service.jpg"  width="100%"/></a></aside>
+<article class="content w clearfix margin-t-10">
+    <section class="margin-b-25">
+        <div class="box margin-t-10 ">
+            <div class="box-t bg_white clearfix">
+                <h2 class="text-center">填写企业认证资料</h2>
+
+            </div>
+            <div class=" bg_white of-hidden margin-t-15 padding20">
+                <div class="box-error-tip padding10" >
+                    <p class="tip-con margin-l-10 font-12">
+                        完善信息才可以发布兼职消息哦~
+                    </p>
+                </div>
+                <form action="/wxkf/capi/addqualification" id="companyinfoForm" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="companyinfo.openid" v-model="ui.openid" />
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">企业信息</h3>
+                    </div>
+                    <div class="listform">
+                    	<div class="form-group">
+                        	<label for="companyinfo_url">公司网址</label>
+                            <input type="text" id="companyinfo_url" class="inputtext" name="companyinfo.companyinfo_url" v-model="cominfo.list.companyinfo_url" />
+                        </div>
+                        <div class="form-group">
+	                    	<label for="companyinfo_type">公司性质</label>
+	                        <select class="inputtext" name="companyinfo.companyinfo_type" id="companyinfo_type" v-model="cominfo.list.companyinfo_type">
+	                        	<option value="私企">私企</option>
+	                           	<option value="国企">国企</option>
+	                        </select>
+	                    </div>
+	                    <div class="form-group">
+                        	<label for="companyinfo_size">企业规模</label>
+                            <input type="text" id="companyinfo_size" class="inputtext number" name="companyinfo.companyinfo_size" v-model="cominfo.list.companyinfo_size"  placeholder="例如:100~499人"/>
+                            <span>人</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_copy">公司营业执照</label>
+                            <input type="file" id="companyinfo_copy" class="inputtext" name="file" />
+                        </div>
+                    </div>
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">法人资料</h3>
+                    </div>
+                    <div class="listform">
+                        <div class="form-group">
+                            <label for="companyinfo_legal_person">法人姓名</label>
+                            <input type="text" id="companyinfo_legal_person" class="inputtext" name="companyinfo.companyinfo_legal_person" v-model="cominfo.list.companyinfo_legal_person"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_certificates">法人证件照</label>
+                            <input type="file" id=companyinfo_certificates class="inputtext" name="file" />
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_img"></label>
+                            <button type="submit" class="demon_btn demon_btn_primary bg_white " style="width: 150px;padding: 10px auto">立即提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+</div>
+<script type="text/javascript" src="commonstatic/js/vue.js"></script>
+<script type="text/javascript"  src="commonstatic/js/jquery-1.11.1.js"></script>
+<script type="text/javascript"  src="commonstatic/js/jquery.validate.min.js"></script>
+<script type="text/javascript"  src="commonstatic/js/GscUtil.js"></script>
+<script type="text/javascript"  src="static/js/ajax.js"></script>
+<script>
+var ui=JSON.parse(localStorage.getItem("bxbsj_userinfo"));
+var bxbsj=new Vue({
+	el: '#bxbsj',
+	data: {
+		ui:ui,
+		cominfo:AjaxTeam.CompanyInfo(ui.openid),
+	},
+	methods:{
+		logout:function(){
+			if(localStorage.getItem("bxbsj_userinfo")!=null){
+				localStorage.removeItem("bxbsj_userinfo");
+				window.location.href="/wxkf/company/login.jsp";
+			}
+		},
+		submit:function(){
+			console.log(this.job);
+		}
+	}
+});
+	if(!bxbsj.cominfo.result){
+		alert("你还没有完善企业信息!");
+		window.location.href="/wxkf/company/index.jsp";
+	}
+    $(function(){
+        $("#companyinfoForm").validate({
+            debug:true,
+            rules: {
+                "companyinfo.companyinfo_name":{
+                    required:true
+                }
+            },
+            messages:{
+                "companyinfo.companyinfo_name":{
+                    required:"用户名不能为空!"
+                }
+            },
+            submitHandler: function(form) 
+            {  
+            	alert("1");
+            	form.submit();
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

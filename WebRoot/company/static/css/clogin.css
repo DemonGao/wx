@@ -1,0 +1,211 @@
+﻿html,body,.contaniner,.contaniner .cloudgroup{
+    width:100%;
+    height:100%;
+}
+body,.contaniner{
+	min-width:1024px;
+	background-color:rgb(41,156,223);
+}
+/*登录框*/
+.contaniner .loginbox{
+    position: absolute;
+    top: 200px;
+    /* float: right; */
+    right: 180px;
+    width: 360px;
+    /* margin-left: 950px; */
+    border-radius: 8px;
+    border: 1px solid rgb(0,117,170);
+    background-color: #fff;
+    z-index: 1000;
+}
+.contaniner .loginbox >h1{
+	text-align:center;
+	font-family:"黑体";
+	font-size:24px;
+	font-weight: normal;
+	color:#555;
+	margin:30px 0;
+}
+.contaniner .loginbox form{
+	margin:30px;
+}
+
+.contaniner .loginbox .form-list{
+	position:relative;
+	margin-bottom:40px;
+}
+.contaniner .loginbox .form-list input{
+	box-sizing:border-box;
+	height:44px;
+	width:100%;
+	font-size:18px;
+	padding:0 54px 0 18px;
+	border:1px solid rgb(165,206,224);
+	
+}
+.contaniner .loginbox .form-list .formlabel{
+	position:absolute;
+	right:10px;
+	height:44px;
+	width:44px;
+	background-position:center right;
+	background-repeat: no-repeat;
+}
+.contaniner .loginbox .form-list .formlabel.userlabel{
+	background-image:url(../../static/img/username.png);
+	
+}
+.contaniner .loginbox .form-list .formlabel.psdlabel{
+	background-image:url(../../static/img/password.png);
+}
+/*格式错误提示信息样式*/
+.contaniner .loginbox .form-list label.error{
+	position:absolute;
+	width:100%;
+	left:0;
+	top:54px;
+	color:red;
+	margin-left:18px;
+}
+.contaniner .loginbox button[type="submit"]{
+	width:100%;
+	height:50px;
+	font-size:20px;
+	text-align:center;
+	background-color:rgb(35,154,222);
+	border:none;
+	border-radius:5px;
+	color:#ffffff;
+}
+.contaniner .loginbox button[type="submit"]:hover{
+	cursor: pointer;
+}
+/*云彩*/
+.contaniner .cloudgroup{
+	position: relative;
+    float: right;
+    margin-right: 550px;
+    /* margin-left: 500px; */
+    /* right: 300px; */
+    width: 600px;
+}
+.contaniner .cloudgroup>div{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.contaniner .cloudgroup>div.cloud1{
+   
+    opacity: .3
+
+}
+.contaniner .cloudgroup>div.cloud2{
+    left: 24px;
+    z-index: 1;
+     opacity: 1
+}
+.contaniner .cloudgroup>div.cloud3{
+    text-align: right;
+    right: -95px;
+    opacity: .6;
+}
+.contaniner .cloudgroup>div.cloud4{
+    text-align: right;
+    right: 0px;
+    opacity: .7;
+}
+.contaniner .cloudgroup>div.cloud5{
+    text-align: left;
+    left: -47px;
+    opacity: .5;
+}
+.contaniner .cloudgroup>div.cloud6{
+    text-align: left;
+    left: 45px;
+    opacity: .5;
+}
+.contaniner .cloudgroup>div.cloud7{
+    text-align: center;
+    right: 50px;
+    opacity: .6;
+}
+.contaniner .cloudgroup>div.rocket-1{
+	left: 17px;
+    bottom: 366px;
+}
+.contaniner .cloudgroup>div.rocket-2{
+	left: 14px;
+    bottom: 140px;
+    opacity: .4;
+}
+
+.contaniner .pcgroup{
+	position:absolute;
+	top: 300px;
+	width:300px;
+	height:300px;
+	margin-left:150px;
+	border-radius:300px;
+	background-color:rgb(82,180,235);
+	background-image:url("../../static/img/pc.png");
+	background-position:center center;
+	background-repeat: no-repeat;
+	background-size:200px;
+}
+.contaniner .pcgroup .pc{
+	position:absolute;
+	border-radius:100%;
+	background-position:center center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+}
+.contaniner .pcgroup .pc1{
+	top:100px;
+	left:-66px;
+	width:76px;
+	height:76px;
+	background-color:rgb(134,223,159);
+	background-image:url("../../static/img/pc-1.png");
+}
+.contaniner .pcgroup .pc2{
+	top:-40px;
+	left:107px;
+	width:86px;
+	height:86px;
+	background-color:rgb(254,204,45);
+	background-image:url("../../static/img/pc-2.png");
+}
+.contaniner .pcgroup .pc3{
+	top: -5px;
+    right: -20px;
+	width:62px;
+	height:62px;
+	background-color:rgb(255,196,154);
+	background-image:url("../../static/img/pc-3.png");
+}
+.contaniner .pcgroup .pc4{
+	top:100px;
+	right: -77px;
+	width:84px;
+	height:84px;
+	background-color:rgb(211,224,134);
+	background-image:url("../../static/img/pc-4.png");
+}
+.contaniner .pcgroup .pc5{
+	bottom: 0;
+    right: 55px;
+    width: 55px;
+    height: 55px;
+    background-color: rgb(28,145,214);
+    background-image: url(../../static/img/pc-5.png);
+}
+.contaniner .pcgroup .pc6{
+	bottom:0;
+	left:22PX;
+	width:44px;
+	height:44px;
+	background-color:rgb(28,202,213);
+	background-image:url("../../static/img/pc-6.png");
+}

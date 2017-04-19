@@ -1,0 +1,30 @@
+.weui_tab_bd{
+	padding: 0;
+	background-color:#efeff4 ;
+}
+.tab{
+	display: block;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 0 auto 15px;
+	border: 1px solid #666666;
+	box-sizing: border-box;
+}
+.tab li{
+	list-style-type: none;
+	float: left;
+	
+	color: #666666;
+	
+}
+.tab li a{
+	padding: 2px 10px;
+	color: #666666;
+	
+}
+.tab li.active a{
+	color: #FFFFFF;
+}
+.tab li.active{
+	background-color: #666666;
+}

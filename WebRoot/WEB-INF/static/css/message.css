@@ -1,0 +1,10 @@
+.box.plate{
+	
+}
+.box.plate>a>div{
+	padding: .5rem 0;
+	text-align: center;
+}
+.box.plate>a>div i{
+	font-size: 3rem;
+}

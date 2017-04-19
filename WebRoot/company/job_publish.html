@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>边学边实践-公司信息</title>
+    <link type="text/css" rel="stylesheet" href="commonstatic/font/iconfont.css" />
+    <link type="text/css" rel="stylesheet" href="commonstatic/css/cssreset.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/pcstyle.css" />
+    <link type="text/css" rel="stylesheet" href="commonstatic/css/Gscstyle.css" />
+</head>
+<body class="b-index">
+<script>
+	if(localStorage.getItem("bxbsj_userinfo")==null){
+		window.location.href="/wxkf/company/login.jsp";
+	}
+</script>
+<div id="bxbsj">
+<header>
+        <div class="w">
+            <div class="h_logo float_l margin-t-15"><a href="javascript:;"></a></div>
+            <div class="h_version color-4b float_l">企业版</div>
+            <ul class="nav">
+                <li>管理中心</li>
+                <li class="line"></li>
+                <li>
+                    <a href="http://vip.doumi.com/zhaopin/">招聘合作</a>
+                </li>
+                <li class="line"></li>
+                <li><a href="http://www.doumi.com/bj/" target="_blank">职位</a></li>
+                <!--li class="line"></li>
+                <li><a href="/">帮助中心</a></li-->
+            </ul>
+            <div class="float_r clearfix">
+                <span v-if="cominfo.result" class="fl color-4b margin-r-15" v-cloak>{{cominfo.list.companyinfo_nickname}}</span>
+                <span v-else="cominfo.result" class="fl color-4b margin-r-15" v-cloak>{{ui.company_username}}</span>
+                <i class="fl l"></i>
+                <span class="fl color-4b margin-l-15"><a v-on:click="logout()" href="javascript:;">退出</a></span>
+            </div>
+        </div>
+    </header>
+<aside class="ad w margin-t-10"><a href="javascript:;"><img src="static/img/vip_service.jpg"  width="100%"/></a></aside>
+<article class="content w clearfix margin-t-10">
+    <section class="margin-b-25">
+        <div class="box margin-t-10 ">
+            <div class="box-t bg_white clearfix">
+                <h2 class="text-center">填写职位信息</h2>
+
+            </div>
+            <div class=" bg_white of-hidden margin-t-15 padding20">
+                <div class="box-error-tip padding10" >
+                    <p class="tip-con margin-l-10 font-12">
+                        完善信息才可以发布兼职消息哦~
+                    </p>
+                </div>
+                <form action="#" method="post" id="companyinfoForm">
+                	<input type="hidden" name="job.companyinfo.openid" v-model="ui.openid" />
+                	<input type="hidden" name="job.job_id" v-model="job.job_id" />
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">基本职位信息</h3>
+                    </div>
+                    <div class="listform">
+                            <div class="form-group">
+                                <label for="job_name">职位名称</label>
+                                <input type="text" id="job_name" class="inputtext" name="job.job_name" v-model="job.job_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="companyinfo_address">工作类型</label>
+                            	<select class="inputtext" name="job.job_style">
+                            		<option value="实习">实习</option>
+                            		<option value="见习">见习</option>
+                            		<option value="就业">就业</option>
+                            	</select>
+                            </div>
+                            <div class="form-group">
+                                <label for="job_recivenum">招聘人数</label>
+                                <input type="number" id="job_name" class="inputtext number" name="job.job_recivenum" v-model="job.job_recivenum" placeholder="职位招聘人数"/>
+                                <span>人</span>
+                                <!--<textarea name="companyinfo.companyinfo_about" id="companyinfo_about" class="inputtextarea" cols="30" rows="5"></textarea>
+                              -->
+                            </div>
+                            <div class="form-group">
+                                <label for="companyinfo_address">学历要求</label>
+                            	<select class="inputtext" name="job.job_education">
+                            		<option value="高中">高中</option>
+                            		<option value="本科">本科</option>
+                            		<option value="研究生">研究生</option>
+                            	</select>
+                            </div>
+                            <div class="form-group">
+                                <label for="job_limittime">职位发布期限</label>
+                                <input type="number" id="job_limittime" class="inputtext number" name="job.job_limittime" v-model="job.job_limittime" placeholder="职位招聘时长"/>
+                                <span>天</span>
+                                <!--<textarea name="companyinfo.companyinfo_about" id="companyinfo_about" class="inputtextarea" cols="30" rows="5"></textarea>
+                              -->
+                            </div>
+                    </div>
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">薪资</h3>
+                    </div>
+                    <div class="listform">
+                        <div class="form-group">
+                        	<label for="job_salary">薪资</label>
+                            <input type="number" id="job_salary" class="inputtext number" name="job_salary" v-model="job.job_salary" />
+                           	<span>元</span>  
+                        </div>
+                        <div class="form-group">
+                        	<label for="job_label">福利标签</label>
+                            <input type="text" id="job_label" class="inputtext" name="job.job_label" v-model="job.job_label" placeholder="每个标签请以小写逗号(,)分割" /> 
+                        </div>
+                    </div>
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">详细职位信息</h3>
+                    </div>
+                    <div class="listform">
+                    	<div class="form-group">
+                        	<label for="companyinfo_address">职位领域</label>
+                            <select class="inputtext" name="job.job_type">
+                            	<option value="实习">IT</option>
+                            	<option value="见习">金融</option>
+                            	<option value="就业">电商</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_require">岗位职责</label>
+                        	<textarea name="job.job_require" id="job_require" v-model="job.job_require" class="inputtextarea" cols="30" rows="5" placeholder="请输入岗位工作内容、职位要求、工作时间等..."></textarea>
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_img"></label>
+                            <button type="submit" class="demon_btn demon_btn_primary bg_white " style="width: 150px;padding: 10px auto">立即提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+</div>
+<script type="text/javascript" src="commonstatic/js/vue.js"></script>
+<script type="text/javascript"  src="commonstatic/js/jquery-1.11.1.js"></script>
+<script type="text/javascript"  src="commonstatic/js/jquery.validate.min.js"></script>
+<script type="text/javascript"  src="commonstatic/js/GscUtil.js"></script>
+<script type="text/javascript"  src="static/js/ajax.js"></script>
+<script>
+var ui=JSON.parse(localStorage.getItem("bxbsj_userinfo"));
+var bxbsj=new Vue({
+	el: '#bxbsj',
+	data: {
+		ui:ui,
+		job:{},
+		cominfo:AjaxTeam.CompanyInfo(ui.openid),
+	},
+	methods:{
+		logout:function(){
+			if(localStorage.getItem("bxbsj_userinfo")!=null){
+				localStorage.removeItem("bxbsj_userinfo");
+				window.location.href="/wxkf/company/login.jsp";
+			}
+		},
+		submit:function(){
+			console.log(this.job);
+		}
+	}
+});
+    $(function(){
+        $("#companyinfoForm").validate({
+            debug:true,
+            rules: {
+                "job.job_name":{
+                    required:true
+                }
+            },
+            messages:{
+                "job.job_name":{
+                    required:"用户名不能为空!"
+                }
+            },
+            submitHandler: function(form) 
+            {      
+            	ajax($(form).serializeObject(),function(data){
+            		if(data.result){
+            			window.location.href="/wxkf/company/index.jsp";
+            		}else{
+            			alert(error_msg);
+            		}
+            		
+            	})
+            	
+            }
+        })
+    })
+    
+    function ajax(data,fn){
+	$.ajax({
+    	url:"/wxkf/capi/Job_add",
+    	type:"POST",
+    	data:data,
+    	success:function(data){
+    		fn(data);
+    	}
+    })
+}
+</script>
+
+</body>
+</html>

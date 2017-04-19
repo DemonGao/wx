@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.tab{
+	position:relative;
+}
+.tabbox{
+	margin:0;
+	border-top-style:none;
+	padding-left:15px;
+	position:relative;
+	position:absolute;
+	top:0;
+}
+.tabbox.tabbox1{
+	left:0;
+}
+.tabbox.tabbox2{
+	left:100%;
+}

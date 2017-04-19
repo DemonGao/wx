@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>编辑联系方式</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+		<link rel="stylesheet" href="../static/JqueryWeUI/lib/weui.min.css">
+		<link rel="stylesheet" href="../static/JqueryWeUI/css/jquery-weui.css">
+
+		<link rel="stylesheet" href="../static/css/style.css" />
+		<style>
+			.weui_label {
+				width: 70px;
+			}
+			
+			html {
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="weui_cells weui_cells_form nomargin">
+			<div class="weui_cell">
+				<div class="weui_cell_hd margin-r-15"><label class="weui_label">手机</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input class="weui_input" type="tel" placeholder="请输入您的手机号">
+				</div>
+			</div>
+			<div class="weui_cell">
+				<div class="weui_cell_hd margin-r-15"><label class="weui_label">邮箱</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input class="weui_input" type="tel" placeholder="请输入您的邮箱">
+				</div>
+			</div>
+			<div class="weui_cell">
+				<div class="weui_cell_hd margin-r-15"><label class="weui_label">QQ</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input class="weui_input" type="tel" placeholder="请输入您的QQ">
+				</div>
+			</div>
+			<a href="javascript:;" class="weui_btn weui_btn_primary margin-l-10 margin-r-10">保存</a>
+		</div>
+		<script src="../static/JqueryWeUI/lib/jquery-2.1.4.js"></script>
+		<script src="../static/JqueryWeUI/lib/fastclick.js"></script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+			});
+		</script>
+		<script src="../static/JqueryWeUI/js/jquery-weui.js"></script>
+		<script src="../static/JqueryWeUI/js/city-picker.js"></script>
+		<script>
+			//现居地
+			$("#place").cityPicker({
+				title: "选择现居地",
+				onChange: function(picker, values, displayValues) {
+					console.log(values, displayValues);
+				}
+			});
+			//出生日期
+			$("#date").calendar({
+				onChange: function(p, values, displayValues) {
+					console.log(values, displayValues);
+				}
+			});
+
+			$("#sex").picker({
+				title: "请选择您的性别",
+				cols: [{
+					textAlign: 'center',
+					values: ['男', '女']
+				}],
+				onChange: function(p, v, dv) {
+					console.log(p, v, dv);
+				},
+				onClose: function(p, v, d) {
+					console.log("close");
+				}
+			});
+
+			$("#qiuzhi").picker({
+				title: "请选择您的性别",
+				cols: [{
+					textAlign: 'center',
+					values: ['在校学生', '正在找个工作,快速到岗','在职,正在考虑换个工作']
+				}],
+				onChange: function(p, v, dv) {
+					console.log(p, v, dv);
+				},
+				onClose: function(p, v, d) {
+					console.log("close");
+				}
+			});
+		</script>
+		<script>
+		</script>
+	</body>
+
+</html>

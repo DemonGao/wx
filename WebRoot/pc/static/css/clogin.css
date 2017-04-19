@@ -1,0 +1,13 @@
+.loginbox{
+    position: absolute;
+    top: 200px;
+    right: 100px;
+    border: 1px solid #cccccc;
+    width: 300px;
+
+    padding: 20px;
+}
+.form-list{
+    height: 40px;
+    line-height: 40px;
+}

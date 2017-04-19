@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>我</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/JqueryWeUI/lib/weui.min.css">
+		<link rel="stylesheet" href="../static/JqueryWeUI/css/jquery-weui.css">
+		
+		<link rel="stylesheet" href="../static/css/style.css" />
+		<link rel="stylesheet" href="../static/css/me.css" />
+	</head>
+
+	<body ontouchstart>
+		<div class="weui_tab">
+			<div class="weui_tab_bd">
+				<div class="home userinfo">
+					<div class="weui_cells weui_cells_access">
+						<div class="weui_panel weui_panel_access info_head bg_blue">
+							<!--<a href="javascript:;" class="weui_media_box weui_media_appmsg">-->
+								<div class="weui_media_hd info_head_img">
+									<img class="weui_media_appmsg_thumb" src="../static/img/swiper-1.jpg" alt="">
+								</div>
+								<div class="weui_media_hd info_head_title color-white ">
+									<p class="font-18 color-white">若水犹离</p>
+									<p>鲁东大学 | 软件工程</p>
+								</div>
+							<!--</a>-->
+						</div>
+						<div class="weui_cells_title info_title">我的求职</div>
+						<div class="weui-row weui-no-gutter navtype">
+							<a href="jobfeedback.html" class="weui-col-33 navtype_list_border">
+								<div>
+									<h3 class="color-blue">1</h3>
+									<p class="color-default">我的订阅</p>
+								</div>
+							</a>
+							<a href="jobfeedback.html" class="weui-col-33 navtype_list_border">
+								<div>
+									<h3 class="color-blue">53</h3>
+									<p class="color-default">投递反馈</p>
+								</div>
+							</a>
+							<a href="resume_likejob.html" class="weui-col-33">
+								<div>
+									<h3 class="color-blue">23</h3>
+									<p class="color-default">已感兴趣的职位</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="box menulist">
+					<a class="weui_cell" href="resume.html">
+						<div class="weui_cell_hd">
+							<i class="iconfont icon-48copy2 color-success"></i>
+						</div>
+						<div class="weui_cell_bd weui_cell_primary">
+							<p>我的简历</p>
+						</div>
+					</a>
+					<a class="weui_cell" href="resume_notify.html">
+						<div class="weui_cell_hd">
+							<i class="iconfont icon-xiaoxitongzhi color-warning"></i>
+						</div>
+						<div class="weui_cell_bd weui_cell_primary">
+							<p>消息通知</p>
+						</div>
+					</a>
+				</div>
+				
+				<div class="box menulist">
+					<a class="weui_cell" href="<%=basePath%>book/page/useractive.jsp?openid=">
+						<div class="weui_cell_hd">
+							<i class="iconfont icon-shoucang color-error"></i>
+						</div>
+						<div class="weui_cell_bd weui_cell_primary">
+							<p>收藏企业</p>
+						</div>
+					</a>
+                    <a class="weui_cell" href="<%=basePath%>book/page/kindleBind.jsp?openid=">
+                        <div class="weui_cell_hd">
+                            <i class="iconfont icon-yijianfankui color-blue"></i>
+                        </div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>意见反馈</p>
+                        </div>
+                    </a>
+				</div>
+				<div class="box menulist">
+
+				</div>	
+			</div>
+
+			<div class="weui_tabbar">
+				<a href="../index.html" class="weui_tabbar_item">
+					<div class="weui_tabbar_icon">
+						<img src="../static/JqueryWeUI/demos/images/icon_nav_article.png" alt="">
+					</div>
+					<p class="weui_tabbar_label">首页</p>
+				</a>
+				<a href="javascript:;" class="weui_tabbar_item">
+					<div class="weui_tabbar_icon">
+						<img src="../static/JqueryWeUI/demos/images/icon_nav_button.png" alt="">
+					</div>
+					<p class="weui_tabbar_label">机会</p>
+				</a>
+				<a href="javascript:;" class="weui_tabbar_item">
+					<div class="weui_tabbar_icon">
+						<img src="../static/JqueryWeUI/demos/images/icon_nav_article.png" alt="">
+					</div>
+					<p class="weui_tabbar_label">消息</p>
+				</a>
+				<a href="javascript:;" class="weui_tabbar_item  weui_bar_item_on">
+					<div class="weui_tabbar_icon">
+						<img src="../static/JqueryWeUI/demos/images/icon_nav_cell.png" alt="">
+					</div>
+					<p class="weui_tabbar_label">我</p>
+				</a>
+			</div>
+		</div>
+
+		<script src="../static/JqueryWeUI/lib/jquery-2.1.4.js"></script>
+		<script src="../static/JqueryWeUI/lib/fastclick.js"></script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+			});
+		</script>
+		<script src="../static/JqueryWeUI/js/jquery-weui.js"></script>
+		<script src="../static/JqueryWeUI/js/swiper.js"></script>
+
+		<script>
+			$(".swiper-container").swiper({
+				loop: true,
+				autoplay: 3000
+			});
+		</script>
+
+	</body>
+
+</html>

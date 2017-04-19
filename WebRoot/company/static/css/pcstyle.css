@@ -1,0 +1,404 @@
+.b-index{
+    background-color: #f1f3f8;
+}
+/*导航栏*/
+header{
+    height: 79px;
+    border-bottom: solid 1px #01B4C8;
+    background-color: #fff;
+    min-width: 1000px;
+}
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}
+@media (min-width: 1280px){
+    .w {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+ol, ul, li {
+    list-style: none;
+}
+.h_logo{
+    width: 240px;
+    height: 50px;
+    background-image: url(../img/dm_logo.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.h_logo a{
+    display: block;
+    height: 100%;;
+}
+.h_version{
+    margin-top:28px;
+    float: left;
+    font-size: 18px;
+    margin-top: 28px;
+    padding-left: 10px;
+    line-height: 24px;
+    font-family: 'hiragino sans gb', 'Microsoft YaHei';
+}
+.nav{
+    float: left;
+    height: 24px;
+    margin-top: 28px;
+    margin-left: 50px;
+}
+.nav li {
+    float: left;
+    font: normal 18px/24px 'hiragino sans gb', 'Microsoft YaHei';
+    color: #ffaa2c;
+}
+.nav li a {
+    color: #4b4b4b;
+    text-decoration: none;
+}
+.nav li.line {
+    font-size: 0;
+    height: 10px;
+    border-left: solid 1px #ddd;
+    margin: 7px 20px 0;
+    color: #ddd;
+}
+.float_r span {
+    display: inline-block;
+    line-height: 79px;
+}
+.float_r a{
+    color: #000000;
+    text-decoration: none;
+}
+.l {
+    width: 1px;
+    height: 10px;
+    background-color: #ddd;
+    font-size: 0;
+    display: inline-block;
+}
+/*---导航栏结束---*/
+
+/*--- 广告 ---*/
+.ad img{
+    vertical-align: top;
+}
+/*---内容栏---*/
+.content{
+    background-color:#F1F3F8;
+}
+/*左侧*/
+.content .c-l{
+    float: left;
+    width: 210px;
+
+}
+.c-l .pub-job{
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+}
+.c-l nav{
+    position: relative;
+    width: 170px;
+    background-color: #fff;
+    padding: 0 20px 20px;
+}
+.c-l nav:before{
+    position: absolute;
+    content: '';
+    width: 170px;
+    top: 0;
+    left: 20px;
+    border-top: 1px dashed #e6e6e6;
+}
+.c-l nav a{
+    color: #4b4b4b;
+    text-decoration: none;
+}
+.c-l nav h2{
+    font-size: 16px;
+    font-weight: normal;
+    font-family:"微软雅黑", "Microsoft Yahei";
+    padding: 10px;
+}
+.c-l nav h2.active,.c-l nav h2:hover{
+    background-color:#FAFAFA;
+}
+.c-l nav h2.active a,.c-l nav h2:hover a{
+    color:#ff6600;
+}
+.c-l nav p{
+    font-size: 14px;
+    padding: 8px;
+}
+.c-l nav p a.active,.c-l nav p a:hover{
+    color: #ff6600;
+}
+.c-l nav p a{
+    margin-left: 40px;
+}
+.content .c-r{
+    margin-left: 220px;
+}
+/*右侧*/
+.c-r{
+    background-color:#F1F3F8;
+}
+.c-r .company{
+    padding: 20px;
+    height: 120px;
+}
+.c-r .company .company-pic{
+    float: left;
+    height: 120px;
+    width: 120px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+}
+.c-r .company .company-pic img{
+	width:100%;
+	height:100%;
+}
+.c-r .company .company-text{
+    position: relative;
+    height: 100%;
+    margin-left: 145px;
+}
+.company .company-nm{
+    position: absolute;
+    top: 0;
+}
+.company .company-nm b{
+    text-decoration: none;
+    color: #4b4b4b;
+}
+.company .company-nm b.ok{
+    color: rgb(1,180,201);
+}
+
+.company .company-jif{
+    position: absolute;
+    bottom: 0;
+}
+
+.box{
+    box-sizing: border-box;
+}
+.box-t{
+    padding: 20px;
+    height: 30px;
+}
+.box h2{
+    line-height: 30px;
+}
+.box button{
+    line-height: 16px;
+    height: 30px;
+    padding: 6px 9px;
+}
+.from-list{
+    line-height: 16px;
+    height: 16px;
+    padding: 6px 9px;
+    border: solid 1px #dcdcdc;
+    width: 180px;
+    color: #707070;
+    font-size: 14px;
+    float: left;
+}
+/*没有数据*/
+.box-list>.nolist{
+    padding: 55px 0 100px;
+    text-align: center;
+}
+.nolist a{
+    padding: 15px 60px;
+}
+/*有数据*/
+.box-list>.haslist{
+    padding: 30px;
+}
+.joblist{}
+.joblist .jobitem{
+	box-sizing:border-box;
+	height:100px;
+	padding:20px;
+	margin-bottom:15px;
+	box-shadow: 1px 1px 5px 0px #aaa;
+}
+.joblist .jobitem>div{
+	height:100%;
+}
+.joblist .jobitem .job_l{
+	box-sizing:border-box;
+	float:left;
+	width:100%;
+	padding-right: 250px;
+}
+.joblist .jobitem .job_l h1{
+	font-size:20px;
+	color:#000;
+}
+.joblist .jobitem .job_l h1 span.signtabs{
+	display:inline-block;
+	font-size:12px;
+	vertical-align: top;
+	background-color:rgb(255,102,0);
+    padding:4px 5px;
+    margin:0 5px;
+    color:#FFF;
+}
+.joblist .jobitem .job_l div{
+	display: -webkit-flex; /* Safari */
+	display:flex;
+	font-size:14px;
+	color: #707070;
+}
+.joblist .jobitem .job_l div p{
+	margin-top:6px;
+	flex:1;
+}
+.joblist .jobitem .job_l div p span{
+	color:#999;
+}
+.joblist .jobitem .job_r{
+	float:left;
+	width:250px;
+	
+	margin-left: -250px;
+	overflow:hidden;
+}
+.joblist .jobitem .job_r a{
+	display:inline-block;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	margin-top:30px;
+}
+
+/*分页*/
+.pageBox ul{
+	margin:20px 0;
+}
+.pageBox ul li{
+	
+	float:left;
+	
+}
+.pageBox ul li a{
+	text-decoration: none;
+	color:#428bca;
+	hegiht:100%;
+	width:100%;
+	padding:10px 15px;
+	border:1px solid #ddd;
+}
+.pageBox ul li.active a{
+	background-color:#ddd;
+}
+.pageBox ul li:first-child a{
+	border-radius:5px 0 0 5px;
+}
+.pageBox ul li:last-child a{
+	border-radius:0 5px 5px 0;
+}
+.box-error-tip{
+    border:1px solid salmon;
+    background-color:#FFF6E4;
+}
+.box-defalut-tip{
+    border:1px solid #F5F6F4;
+    background-color:#F5F6F4;
+}
+.box .listform{
+    margin-top:30px;
+}
+.box .listform .form-group{
+    margin-top:30px;
+}
+.box .listform label{
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    color: #707070;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+/*表单错误提示*/
+.box .listform label.error{
+	width:auto;
+	margin-left:50px;
+	padding-left:40px;
+	background-image:url(../../static/img/error.png);
+	background-position:center left;
+	background-repeat: no-repeat;
+}
+.box .listform .inputtext.error,.box .listform .inputtextarea.error{
+	border:1px solid red;
+	outline:none;
+}
+.box .listform .inputtext.valid,.box .listform .inputtextarea.valid{
+	border:1px solid green;
+	outline:none;
+}
+
+.box .listform .inputtext{
+    width: 500px;
+    line-height: 16px;
+    padding: 6px 10px;
+    border: solid 1px #cdcdcd;
+    color: #4b4b4b;
+    font-size: 14px;
+    vertical-align: top;
+    border-radius:2px;
+}
+.box .listform .inputtext.number{
+	width:150px;
+}
+.box .listform span{
+	vertical-align: -webkit-baseline-middle;
+}
+.box .listform .inputtextarea{
+    width: 500px;
+    margin: 0;
+    padding: 2px 9px;
+    border: solid 1px #cdcdcd;
+    color: #4b4b4b;
+    font-size: 14px;
+    line-height: 22px;
+    resize: none;
+    vertical-align: middle;
+    border-radius:2px;
+}
+#nolist table{
+	width:90%;
+	margin:-30px auto 0;
+	
+}
+#nolist table td,#nolist table th{
+	text-align:left;
+}
+#nolist table td{
+	height:40px;
+	line-height:40px;
+}
+#nolist table a{
+	padding:0;
+	color:#000;
+	text-decoration: none;
+}
+#tolist{
+	display:none;
+	width: 90%;
+	margin:0 auto;
+	padding-bottom:30px;
+}
+#tolist .pageNum{
+	float:right;
+}

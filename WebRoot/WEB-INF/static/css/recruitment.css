@@ -1,0 +1,34 @@
+.recruitment .info_head_img{
+	height:4rem;
+	width: 4rem;
+	border-radius: 0;
+}
+.recruitment .info_head_title>p{
+	color: #666;
+}
+.recruitment .navtype {
+	border: 0;
+}
+.recruitment .navtype i{
+	font-size: 3rem;
+	vertical-align: text-top;
+	color: #AAAAAA;
+}
+.weui_tabbar{
+    padding: 10.5px 0;
+}
+ .weui_tabbar_item  {
+	padding: 7px 0;
+	
+}
+.weui_tabbar_item .weui_tabbar_label{
+	color: #FFFFFF;
+}
+.weui_tabbar_item .weui_tabbar_label i{
+	vertical-align:baseline;
+	font-size: 1.2rem;
+	margin-right: .5rem;
+}
+ .weui_tabbar:before{
+	border-top: none;
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--解决乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 文件上传 创建临时文件 -->
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<!-- 设置图片上传的最大大小 -->
+	<constant name="struts.multipart.maxSize" value="100000000"/> 
+	<!-- 后台处理逻辑 -->
+	<package name="AdminAction" extends="struts-default" namespace="/Admin">
+		<action name="*_*" class="com.admin.Action.{1}Action" method="{2}">
+			<result name="success">/admin/index.jsp</result>
+			<result name="input">/admin/pages/login.jsp</result>
+		</action>
+	</package>
+	<!-- 微信页面Json -->
+	<package name="Json" extends="struts-default,json-default"
+		namespace="/api">
+		<action name="*_*" class="com.wxkf.Action.{1}Action"
+			method="{2}">
+			<result type="json">
+				<!-- Struts 2支持JSONP，只需要在result中配置相应的属性即可 Struts2中配置的callbackParameter值要和页面AJAX调用参数中的jsonp的值一样 -->
+				<param name="callbackParameter">callback</param>
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+	</package>
+	<!-- 微信页面Json -->
+	<package name="ActionJson" extends="struts-default,json-default"
+		namespace="/adminapi">
+		<action name="*_*" class="com.admin.Action.{1}Action"
+			method="{2}">
+			<result type="json">
+				<!-- Struts 2支持JSONP，只需要在result中配置相应的属性即可 Struts2中配置的callbackParameter值要和页面AJAX调用参数中的jsonp的值一样 -->
+				<param name="callbackParameter">callback</param>
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+	</package>
+	<!-- 页面挑战 -->
+	<package name="redirectAction" extends="struts-default" namespace="/">
+		<action name="*_*" class="com.wxkf.Action.{1}Action" method="{2}">
+			<result name="success">/admin/index.jsp</result>
+			<result name="input">/admin/pages/login.jsp</result>
+		</action>
+		<action name="addinfo" class="com.wxkf.Action.StudentAction" method="addinfo">
+				<result type="redirect">/bxbsj/page/resume.jsp</result>
+				
+		</action>
+	</package>
+	
+	<!-- PC 公司逻辑 gsc write -->
+	<package name="PCCompanyJson" extends="struts-default,json-default"
+		namespace="/capi">
+		<action name="*_*" class="com.pc.Action.{1}Action"
+			method="{2}">
+			<result type="json">
+				<!-- Struts 2支持JSONP，只需要在result中配置相应的属性即可 Struts2中配置的callbackParameter值要和页面AJAX调用参数中的jsonp的值一样 -->
+				<param name="callbackParameter">callback</param>
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+		<action name="addinfo" class="com.pc.Action.CompanyInfoAction" method="addinfo">
+			<result type="redirect">/company/index.jsp</result>
+		</action>
+		<action name="addqualification" class="com.pc.Action.CompanyInfoAction" method="addqualification">
+			<result type="redirect">/company/index.jsp</result>
+		</action>
+	</package>
+	
+	<!-- PC端页面 佟欢写 -->
+	<package name="Jsonpc" extends="struts-default,json-default" namespace="/pcd">
+		<action name="*_*" class="com.pc.Action.{1}Action"
+			method="{2}">
+			<result type="json">
+				<!-- Struts 2支持JSONP，只需要在result中配置相应的属性即可 Struts2中配置的callbackParameter值要和页面AJAX调用参数中的jsonp的值一样 -->
+				<param name="callbackParameter">callback</param>
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<param name="root">dataMap</param>
+			</result>
+		</action>
+	</package>
+	<package name="rediAction" extends="struts-default" namespace="/pc">
+		<action name="*_*" class="com.pc.Action.{1}Action" method="{2}">
+			<result name="success">/pc/static/index.jsp</result>
+			<result name="input">/admin/pages/login.jsp</result>
+		</action>
+		<action name="querys" class="com.pc.Action.CompanyAction" method="querys">
+		    <result name="success">/pc/static/index.jsp</result>
+		    <result name="error">/pc/clogin.jsp</result>
+		</action>
+		<action name="add" class="com.pc.Action.CompanyInfoAction" method="add">
+		    <result name="success">/pc/static/index.jsp</result>
+		    <result name="error">/pc/static/company_edit.jsp</result>
+		</action>
+		<action name="add1" class="com.pc.Action.JobAction" method="add">
+		    <result name="success" type="redirect">/pc/static/index.jsp</result>
+		    <result name="error">/pc/static/job_release.jsp</result>
+		</action>
+		<action name="add2" class="com.pc.Action.JobAction" method="update">
+		    <result name="success">/pc/static/index.jsp</result>
+		    <result name="error">/pc/static/job_update.jsp</result>
+		</action>
+		<action name="add3" class="com.pc.Action.CompanyInfoAction" method="add">
+		    <result name="success">/pc/static/index.jsp</result>
+		    <result name="error">/pc/authentication.jsp</result>
+		</action>
+		<action name="exit" class="com.pc.Action.CompanyAction" method="exit">
+		    <result name="success">/pc/clogin.jsp</result>
+		</action>
+   </package>
+</struts>    

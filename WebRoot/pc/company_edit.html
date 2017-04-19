@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>边学边实践-公司信息</title>
+    <link type="text/css" rel="stylesheet" href="../commonstatic/font/iconfont.css" />
+    <link type="text/css" rel="stylesheet" href="../commonstatic/css/cssreset.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/pcstyle.css" />
+    <link type="text/css" rel="stylesheet" href="../commonstatic/css/Gscstyle.css" />
+</head>
+<body class="b-index">
+<header>
+    <div class="w">
+        <div class="h_logo float_l margin-t-15"><a href="javascript:;"></a></div>
+        <div class="h_version color-4b float_l">企业版</div>
+        <ul class="nav">
+            <li>
+                管理中心
+            </li>
+            <li class="line"></li>
+            <li>
+                <a href="http://vip.doumi.com/zhaopin/">招聘合作</a>
+            </li>
+            <li class="line"></li>
+            <li><a href="http://www.doumi.com/bj/" target="_blank">职位</a></li>
+            <!--li class="line"></li>
+            <li><a href="/">帮助中心</a></li-->
+        </ul>
+        <div class="float_r clearfix">
+            <span class="fl color-4b margin-r-15">17853593651</span>
+            <i class="fl l"></i>
+            <span class="fl color-4b margin-l-15"><a href="/employer/user/logout">退出</a></span>
+        </div>
+    </div>
+</header>
+<aside class="ad w margin-t-10"><a href="javascript:;"><img src="static/img/vip_service.jpg"  width="100%"/></a></aside>
+<article class="content w clearfix margin-t-10">
+    <section class="margin-b-25">
+        <div class="box margin-t-10 ">
+            <div class="box-t bg_white clearfix">
+                <h2 class="text-center">填写公司信息</h2>
+
+            </div>
+            <div class=" bg_white of-hidden margin-t-15 padding20">
+                <div class="box-error-tip padding10" >
+                    <p class="tip-con margin-l-10 font-12">
+                        完善信息才可以发布兼职消息哦~
+                    </p>
+                </div>
+                <form action="#" method="post" id="companyinfoForm">
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">基本信息</h3>
+                    </div>
+                    <div class="listform">
+                            <div class="form-group">
+                                <label for="companyinfo_name">公司名称</label>
+                                <input type="text" id="companyinfo_name" class="inputtext" name="companyinfo.companyinfo_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="companyinfo_address">详细地址</label>
+                                <input type="text" id="companyinfo_address" class="inputtext" name="companyinfo.companyinfo_address" />
+                            </div>
+                            <div class="form-group">
+                                <label for="companyinfo_about">公司简介</label>
+                                <textarea name="companyinfo.companyinfo_about" id="companyinfo_about" class="inputtextarea" cols="30" rows="5"></textarea>
+                            </div>
+                    </div>
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">联系方式</h3>
+                    </div>
+                    <div class="listform">
+                        <div class="form-group">
+                            <label for="companyinfo_nickname">负责人姓名</label>
+                            <input type="text" id="companyinfo_nickname" class="inputtext" name="companyinfo.companyinfo_nickname" />
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_tel">负责人联系方式</label>
+                            <input type="text" id="companyinfo_tel" class="inputtext" name="companyinfo.companyinfo_tel" />
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_email">公司邮箱</label>
+                            <input type="text" id="companyinfo_email" class="inputtext" name="companyinfo.companyinfo_email" />
+                        </div>
+                    </div>
+                    <div class="box-defalut-tip padding10 margin-t-15" >
+                        <h3 class="margin-l-10">企业 Logo</h3>
+                    </div>
+                    <div class="listform">
+                        <div class="form-group">
+                            <label for="companyinfo_img">企业Logo</label>
+                            <input type="file" id="companyinfo_img" class="inputtext" name="companyinfo.companyinfo_img" />
+                        </div>
+                        <div class="form-group">
+                            <label for="companyinfo_img"></label>
+                            <button type="submit" class="demon_btn demon_btn_primary bg_white " style="width: 150px;padding: 10px auto">立即提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+<script type="text/javascript" src="../commonstatic/js/vue.js"></script>
+<script type="text/javascript"  src="../commonstatic/js/jquery-1.11.1.js"></script>
+<script type="text/javascript"  src="../commonstatic/js/jquery.validate.min.js"></script>
+<script>
+    $(function(){
+        $("#companyinfoForm").validate({
+            debug:true,
+            rules: {
+                "companyinfo.companyinfo_name":{
+                    required:true
+                }
+            },
+            messages:{
+                "companyinfo.companyinfo_name":{
+                    required:"用户名不能为空!"
+                }
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

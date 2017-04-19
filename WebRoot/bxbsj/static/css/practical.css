@@ -1,0 +1,25 @@
+.weui_navbar+.weui_tab_bd {
+    padding-top: 44px;
+    padding-bottom: 0;
+}
+.practical{
+	
+}
+.picker{
+	padding: 10px;
+	
+	border-bottom: 1px solid #DFDFDF;
+}
+
+.picker .selects{
+	text-align: center;
+} 
+
+.picker .selects>a{
+	padding: 2px;
+	display: block;
+	width: 100%;;
+}
+.picker .selects>a.select_a_rb{
+	border-right: 1px solid #979797;
+}

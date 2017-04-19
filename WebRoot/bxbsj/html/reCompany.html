@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>编辑联系方式</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../static/JqueryWeUI/lib/weui.min.css">
+    <link rel="stylesheet" href="../static/JqueryWeUI/css/jquery-weui.css">
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <style>
+        .weui_label {
+            width: 70px;
+        }
+
+        html {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="weui_cells weui_cells_form nomargin" id="vue_from">
+    <div class="weui_cell">
+        <div class="weui_cell_hd margin-r-15"><label class="weui_label">用户名</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="text" placeholder="请输入登录账号" v-model="username">
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_hd margin-r-15"><label class="weui_label">密码</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="password" id="password" placeholder="请输入密码">
+        </div>
+    </div>
+    <a href="javascript:;" class="weui_btn weui_btn_primary margin-l-10 margin-r-10" v-on:click="submit">登录</a>
+</div>
+<script src="../static/JqueryWeUI/lib/jquery-2.1.4.js"></script>
+<script src="../static/JqueryWeUI/lib/fastclick.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="../static/JqueryWeUI/js/jquery-weui.js"></script>
+<script type="text/javascript" src="../static/js/vue.js"></script>
+<script type="text/javascript" src="../static/js/GscUtil.js"></script>
+<script>
+    var vue_from = new Vue({
+        el:'#vue_from',
+        data:{
+            username:'',
+            password:''
+        },
+        methods:{
+            submit:function(){
+                GscUtil.ajax('/wxkf/api/Company_login',"POST",{
+                    "company.company_username":this.username,
+                    "company.company_password":this.password
+                },"JSON",function(data){
+                    if(data.result){
+                        alert("登录成功!");
+                    }else{
+                        alert(data.error_msg);
+                    }
+                })
+            }
+        }
+    })
+</script>
+<script>
+</script>
+</body>
+
+</html>

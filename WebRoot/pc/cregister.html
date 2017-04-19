@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>企业注册</title>
+    <link type="text/css" rel="stylesheet" href="../commonstatic/bootstrap/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../commonstatic/css/Gscstyle.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/cregister.css" />
+</head>
+<body>
+<div class="registerbox">
+    <form id="registerForm" class="form-horizontal" role="form">
+        <div class="form-group margin-t-15">
+            <label for="username" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input  type="text" class="form-control" id="username" name="company.company_username" placeholder="请输入账号名称"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input  type="password" class="form-control" id="password" name="password" placeholder="请输入密码"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password" class="col-sm-2 control-label">确认密码</label>
+            <div class="col-sm-10">
+                <input  type="password" class="form-control" id="confirm-password" name="company.company_password" placeholder="请输入确认密码"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button type="submit" class="btn btn-default btn-lg btn-block">注册</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript"  src="../commonstatic/js/jquery-1.11.1.js"></script>
+<script type="text/javascript"  src="../commonstatic/js/jquery.validate.min.js"></script>
+<script>
+
+    $(function(){
+        $("#registerForm").validate({
+            debug:true,
+            rules: {
+                "company.company_username":{
+                    required:true,
+                    usernamecode:true,
+                    remote:{
+                        url:"",
+                        type:"post",
+                        data:{
+                        }
+                    }
+                },
+                "password":{
+                    required:true,
+                    passwordcode:true
+                },
+                "company.company_password":{
+                   equalTo:"#password"
+                }
+            },
+            messages:{
+                "company.company_username":{
+                    required:"用户名不能为空!"
+                },
+                "password":{
+                    required:"密码不能为空!"
+                },
+                "company.company_password":{
+                    equalTo:"两次密码输入不一致"
+
+                }
+            }
+        });
+        /*用户名规则*/
+        $.validator.addMethod("usernamecode",function(value,element,params){
+            var usernamecode = /^[a-zA-Z]\w{5,17}$/;
+            return this.optional(element)||(usernamecode.test(value));
+        },"请以字母开头，长度在6~18之间，只能包含字符、数字和下划线");
+        //密码规则
+        $.validator.addMethod("passwordcode",function(value,element,params){
+            var usernamecode = /^[a-zA-Z]\w{5,17}$/;
+            return this.optional(element)||(usernamecode.test(value));
+        },"请以字母开头，长度在6~18之间，只能包含字符、数字和下划线");
+    })
+</script>
+</body>
+</html>
